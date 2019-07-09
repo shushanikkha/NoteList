@@ -16,13 +16,15 @@ class NoteList {
     var description: String
     var email: String
     var phoneNumber: String
+    var date: Date
     var image: UIImage?
     
-    init(title: String, description: String, email: String, phoneNumber: String, image: UIImage? = nil) {
+    init(title: String, description: String, email: String, phoneNumber: String, date: Date, image: UIImage? = nil) {
         self.title = title
         self.description = description
         self.email = email
         self.phoneNumber = phoneNumber
+        self.date = date
         self.image = image
     }
     

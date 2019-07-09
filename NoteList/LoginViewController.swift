@@ -26,7 +26,11 @@ class LoginViewController: UIViewController {
     
     // MARK: - IBAction
     
+    
     @IBAction func loginButton(_ sender: UIButton) {
+//        guard let notesViewController = self.storyboard?.instantiateViewController(withIdentifier: "NoteListTableViewController") as? NoteListTableViewController else { return }
+//        let navVC = UINavigationController(rootViewController: notesViewController)
+//        present(navVC, animated: true, completion: nil)
         if username.text == "" || password.text == "" {
             let alert = UIAlertController.init(title: "Attantion!", message: "Please, enter your username and/or password", preferredStyle: .alert)
             let action = UIAlertAction.init(title: "OK", style: .default, handler: nil)

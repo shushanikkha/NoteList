@@ -23,7 +23,11 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     @IBOutlet weak var imageChooseButton: UIButton!
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var saveButton: UIBarButtonItem!
-    
+//    var isEdit: Bool {
+//        didSet {
+//            
+//        }
+//    }
     var note: NoteList?
     weak var delegate: AddViewControllerDelegate?
 
@@ -34,13 +38,14 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         descriptionTextView.layer.borderWidth = 0.5
         descriptionTextView.layer.borderColor = UIColor.lightGray.withAlphaComponent(0.6).cgColor
         
-        if let note = self.note {
-            titleTextField.text = note.title
-            descriptionTextView.text = note.description
-            emailTextField.text = note.email
-            phoneNumberTextField.text = note.phoneNumber
-            imageView.image = note.image
-        }
+//        if let note = self.note {
+//            titleTextField.text = note.title
+//            descriptionTextView.text = note.description
+//            emailTextField.text = note.email
+//            phoneNumberTextField.text = note.phoneNumber
+//            datePicker.date = note.date
+//            imageView.image = note.image
+//        }
    //    updateSaveButtonState()
     } 
     
@@ -71,13 +76,24 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
 //    }
     
     @IBAction func saveButton(_ sender: UIBarButtonItem) {
-        if let title = titleTextField.text, let description = descriptionTextView.text, let phoneNumber = phoneNumberTextField.text, let email = emailTextField.text  {
-            let note = NoteList(title: title, description: description, email: email, phoneNumber: phoneNumber, image: imageView.image)
+        if let title = titleTextField.text, let description = descriptionTextView.text, let phoneNumber = phoneNumberTextField.text, let email = emailTextField.text, let date = datePicker {
+            if !email.isValidEmail {
+                let alert = UIAlertController(title: "Unvalid Email!", message: "Please, check your email, it must be at this form: example@gmail.com", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+                alert.addAction(okAction)
+                present(alert, animated: true, completion:  nil)
+            } else if !phoneNumber.isValidPhone {
+                let alert = UIAlertController(title: "Unvalid phone number!", message: "Please, check your phone number, it must be at this form: 000-000000", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+                alert.addAction(okAction)
+                present(alert, animated: true, completion:  nil)
+            } else {
+            let note = NoteList(title: title, description: description, email: email, phoneNumber: phoneNumber, date: date.date, image: imageView.image)
             delegate?.noteCreated(note: note)
             navigationController?.dismiss(animated: true, completion: nil)
         }
     }
-    
+    }
     
     @IBAction func chooseImage(_ sender: UIButton) {
         

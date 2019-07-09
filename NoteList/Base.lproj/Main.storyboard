@@ -36,7 +36,7 @@
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="loginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HIS-7H-lje"/>
-                                    <segue destination="Brr-aN-7Uk" kind="presentation" id="gJL-Un-k5f"/>
+                                    <segue destination="eLf-fF-3cS" kind="presentation" id="2cl-lI-Q6U"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -61,7 +61,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="114.50892857142857"/>
+            <point key="canvasLocation" x="962" y="121"/>
         </scene>
         <!--NOTE LIST-->
         <scene sceneID="nbq-qR-Tjd">
@@ -71,6 +71,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <inset key="separatorInset" minX="30" minY="0.0" maxX="30" maxY="0.0"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoteListTableViewCell" rowHeight="200" id="wsQ-D8-pqU" customClass="NoteListTableViewCell" customModule="NoteList" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="200"/>
@@ -103,7 +104,7 @@
                                                 <constraint firstAttribute="height" constant="40" id="fUG-fh-fFj"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q9K-XF-C9I">
@@ -112,8 +113,7 @@
                                                 <constraint firstAttribute="height" constant="40" id="h3s-hO-03o"/>
                                             </constraints>
                                             <connections>
-                                                <action selector="emailAction" destination="wsQ-D8-pqU" eventType="touchUpInside" id="mLW-4B-btz"/>
-                                                <action selector="sendEmailButton:" destination="GnV-Sk-sN5" eventType="touchUpInside" id="dkQ-LJ-VfD"/>
+                                                <action selector="emailAction" destination="wsQ-D8-pqU" eventType="touchUpInside" id="INC-bB-h1c"/>
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qU7-3m-vDQ">
@@ -122,7 +122,7 @@
                                                 <constraint firstAttribute="height" constant="40" id="CrX-at-4H3"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ipv-St-Jij">
@@ -134,10 +134,17 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ie-to-7pz">
+                                            <rect key="frame" x="20" y="120" width="374" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="hGJ-IV-1um"/>
+                                            </constraints>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="qU7-3m-vDQ" firstAttribute="top" secondItem="KTL-l1-aJP" secondAttribute="bottom" id="3PD-n0-5fl"/>
                                         <constraint firstItem="Ipv-St-Jij" firstAttribute="top" secondItem="qU7-3m-vDQ" secondAttribute="bottom" id="7dx-IT-05y"/>
+                                        <constraint firstItem="0Ie-to-7pz" firstAttribute="top" secondItem="KTL-l1-aJP" secondAttribute="bottom" id="9lw-nH-Fpy"/>
                                         <constraint firstItem="KTL-l1-aJP" firstAttribute="leading" secondItem="2tZ-5E-7PI" secondAttribute="leading" constant="20" id="EUa-7c-KIy"/>
                                         <constraint firstItem="Zys-5x-Sys" firstAttribute="leading" secondItem="2tZ-5E-7PI" secondAttribute="leading" constant="20" id="MUI-1S-D1n"/>
                                         <constraint firstAttribute="trailing" secondItem="Q9K-XF-C9I" secondAttribute="trailing" constant="20" id="Mfv-fE-LWP"/>
@@ -146,8 +153,11 @@
                                         <constraint firstItem="qU7-3m-vDQ" firstAttribute="leading" secondItem="2tZ-5E-7PI" secondAttribute="leading" constant="20" id="Uiq-GR-Od7"/>
                                         <constraint firstItem="Ipv-St-Jij" firstAttribute="leading" secondItem="2tZ-5E-7PI" secondAttribute="leading" constant="20" id="V0E-Ji-IfI"/>
                                         <constraint firstAttribute="trailing" secondItem="Zys-5x-Sys" secondAttribute="trailing" constant="20" id="W7j-v2-qmo"/>
+                                        <constraint firstAttribute="trailing" secondItem="0Ie-to-7pz" secondAttribute="trailing" constant="20" id="WHI-SK-u5J"/>
                                         <constraint firstItem="KTL-l1-aJP" firstAttribute="top" secondItem="7wj-gF-nC6" secondAttribute="bottom" id="coX-sZ-nna"/>
+                                        <constraint firstItem="0Ie-to-7pz" firstAttribute="leading" secondItem="2tZ-5E-7PI" secondAttribute="leading" constant="20" id="fMt-yN-Yuf"/>
                                         <constraint firstAttribute="trailing" secondItem="7wj-gF-nC6" secondAttribute="trailing" constant="20" id="fx7-Zi-6GC"/>
+                                        <constraint firstAttribute="bottom" secondItem="Ipv-St-Jij" secondAttribute="bottom" constant="-0.5" id="idq-GV-eRA"/>
                                         <constraint firstItem="7wj-gF-nC6" firstAttribute="leading" secondItem="2tZ-5E-7PI" secondAttribute="leading" constant="20" id="kon-K6-go5"/>
                                         <constraint firstAttribute="trailing" secondItem="qU7-3m-vDQ" secondAttribute="trailing" constant="20" id="nsx-44-Ot4"/>
                                         <constraint firstItem="Q9K-XF-C9I" firstAttribute="top" secondItem="7wj-gF-nC6" secondAttribute="bottom" id="qzc-Zl-9by"/>
@@ -202,7 +212,7 @@
                                                 <constraint firstAttribute="height" constant="40" id="JXM-2N-kPQ"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ygu-AH-I8F">
@@ -212,7 +222,6 @@
                                             </constraints>
                                             <connections>
                                                 <action selector="emailAction" destination="Zd2-Zm-IS2" eventType="touchUpInside" id="koK-9b-djx"/>
-                                                <action selector="sendEmailButton:" destination="GnV-Sk-sN5" eventType="touchUpInside" id="Mus-jy-WpN"/>
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fk8-IR-Fok">
@@ -221,7 +230,7 @@
                                                 <constraint firstAttribute="height" constant="40" id="gcU-9V-kCn"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uAh-xQ-HgH">
@@ -233,12 +242,20 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yuY-QO-gg7">
+                                            <rect key="frame" x="130" y="120" width="264" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="npD-nx-2at"/>
+                                            </constraints>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="qvR-Xv-oJx" firstAttribute="leading" secondItem="Lm7-4X-NQD" secondAttribute="trailing" constant="5" id="1OK-gJ-UOu"/>
+                                        <constraint firstAttribute="bottom" secondItem="uAh-xQ-HgH" secondAttribute="bottom" constant="-0.5" id="2eL-js-dAd"/>
                                         <constraint firstAttribute="trailing" secondItem="Ygu-AH-I8F" secondAttribute="trailing" constant="20" id="3g3-v6-Cgc"/>
                                         <constraint firstAttribute="trailing" secondItem="boI-iL-Z7N" secondAttribute="trailing" constant="20" id="5nL-Ht-2ap"/>
                                         <constraint firstItem="vfS-Cx-ilM" firstAttribute="leading" secondItem="Lm7-4X-NQD" secondAttribute="trailing" constant="5" id="6g0-Ez-bW9"/>
+                                        <constraint firstAttribute="trailing" secondItem="yuY-QO-gg7" secondAttribute="trailing" constant="20" id="7AQ-xS-yl4"/>
                                         <constraint firstAttribute="bottom" secondItem="Lm7-4X-NQD" secondAttribute="bottom" constant="5" id="BeO-rb-1BL"/>
                                         <constraint firstItem="uAh-xQ-HgH" firstAttribute="top" secondItem="Fk8-IR-Fok" secondAttribute="bottom" id="FBo-MU-OZB"/>
                                         <constraint firstItem="Lm7-4X-NQD" firstAttribute="top" secondItem="uOb-PK-8tF" secondAttribute="top" constant="5" id="Fpo-ti-oLP"/>
@@ -248,7 +265,9 @@
                                         <constraint firstAttribute="trailing" secondItem="vfS-Cx-ilM" secondAttribute="trailing" constant="20" id="RG2-Z8-YK5"/>
                                         <constraint firstItem="Fk8-IR-Fok" firstAttribute="leading" secondItem="Lm7-4X-NQD" secondAttribute="trailing" constant="5" id="WJX-t5-07c"/>
                                         <constraint firstAttribute="trailing" secondItem="uAh-xQ-HgH" secondAttribute="trailing" constant="20" id="XrC-wa-Vmt"/>
+                                        <constraint firstItem="yuY-QO-gg7" firstAttribute="leading" secondItem="Lm7-4X-NQD" secondAttribute="trailing" constant="20" id="ehz-Iu-gSW"/>
                                         <constraint firstAttribute="trailing" secondItem="Fk8-IR-Fok" secondAttribute="trailing" constant="20" id="gCX-WJ-WnR"/>
+                                        <constraint firstItem="yuY-QO-gg7" firstAttribute="top" secondItem="boI-iL-Z7N" secondAttribute="bottom" id="gbh-eB-jjo"/>
                                         <constraint firstItem="qvR-Xv-oJx" firstAttribute="top" secondItem="vfS-Cx-ilM" secondAttribute="bottom" id="h3m-FC-rfF"/>
                                         <constraint firstItem="boI-iL-Z7N" firstAttribute="top" secondItem="qvR-Xv-oJx" secondAttribute="bottom" id="nn6-gM-C1p"/>
                                         <constraint firstItem="uAh-xQ-HgH" firstAttribute="leading" secondItem="Lm7-4X-NQD" secondAttribute="trailing" constant="5" id="nsL-Gv-yYH"/>
@@ -289,7 +308,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WIy-85-o77" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1847.826086956522" y="114.50892857142857"/>
+            <point key="canvasLocation" x="2757.971014492754" y="114.50892857142857"/>
         </scene>
         <!--ADD-->
         <scene sceneID="DDm-je-BYI">
@@ -357,7 +376,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="6Zj-Bm-wZT">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="000-000000" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="6Zj-Bm-wZT">
                                 <rect key="frame" x="20" y="474" width="374" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -375,7 +394,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="AXG-q6-6LR">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="example@gmail.com" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="AXG-q6-6LR">
                                 <rect key="frame" x="20" y="390" width="374" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -432,7 +451,7 @@
                     <navigationItem key="navigationItem" title="ADD" id="hlD-fx-gIl">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="HK7-zH-F84">
                             <connections>
-                                <segue destination="6RN-mB-z59" kind="unwind" unwindAction="unwindToNoteListViewWithSegue:" id="YNs-n9-MbH"/>
+                                <segue destination="6RN-mB-z59" kind="unwind" unwindAction="unwindToNoteListViewWithSegue:" id="5qZ-XZ-En4"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="PC1-s8-fyF">
@@ -454,23 +473,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6dz-nf-sFe" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="6RN-mB-z59" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3550.7246376811595" y="114.50892857142857"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="WYI-fK-65y">
-            <objects>
-                <navigationController id="Brr-aN-7Uk" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jpB-YS-c4s">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="GnV-Sk-sN5" kind="relationship" relationship="rootViewController" id="QI9-ft-tRE"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nj9-xh-faw" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="964" y="115"/>
+            <point key="canvasLocation" x="4460.8695652173919" y="114.50892857142857"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Rtg-o4-Oqa">
@@ -488,10 +491,28 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uum-ea-bBx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2701" y="115"/>
+            <point key="canvasLocation" x="3610.144927536232" y="114.50892857142857"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="yVv-Gn-ahM">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eLf-fF-3cS" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Z0T-dW-V18">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="GnV-Sk-sN5" kind="relationship" relationship="rootViewController" id="mUH-2O-ye8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PL9-EW-Nr0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1847.826086956522" y="114.50892857142857"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Uq2-O3-paf"/>
+        <segue reference="Gqb-oJ-lro"/>
     </inferredMetricsTieBreakers>
 </document>

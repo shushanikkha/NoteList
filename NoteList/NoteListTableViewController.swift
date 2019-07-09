@@ -21,6 +21,7 @@ MFMailComposeViewControllerDelegate {
         super.viewDidLoad()
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 200.0
+        title = "Notes List"
         self.navigationItem.leftBarButtonItem = self.editButtonItem
     }
     
@@ -72,6 +73,7 @@ MFMailComposeViewControllerDelegate {
         tableView.setEditing(!tableViewEditingMode, animated: true)
     }
     
+    
     @IBAction private func addAction(){
         guard let addViewController = self.storyboard?.instantiateViewController(withIdentifier: "AddViewController") as? AddViewController else { return }
         addViewController.delegate = self
@@ -79,22 +81,22 @@ MFMailComposeViewControllerDelegate {
         present(navVC, animated: true, completion: nil)
         
     }
-    
+ 
     
     @IBAction func unwindToNoteListView(segue: UIStoryboardSegue) {
-        guard segue.identifier == "saveNotes" else { return }
-        let sourceViewController = segue.source as! AddViewController
-        if let note = sourceViewController.note {
-            if let selectedIndexPath = tableView.indexPathForSelectedRow {
-                notes[selectedIndexPath.row] = note
-                tableView.reloadRows(at: [selectedIndexPath], with: .none)
-            } else {
-                let newIndexPath = IndexPath(row: notes.count, section: 0)
-                notes.append(note)
-                tableView.insertRows(at: [newIndexPath], with: .automatic)
-            }
-        }
-    }
+//        guard segue.identifier == "saveNotes" else { return }
+//        let sourceViewController = segue.source as! AddViewController
+//        if let note = sourceViewController.note {
+//            if let selectedIndexPath = tableView.indexPathForSelectedRow {
+//                notes[selectedIndexPath.row] = note
+//                tableView.reloadRows(at: [selectedIndexPath], with: .none)
+//            } else {
+//                let newIndexPath = IndexPath(row: notes.count, section: 0)
+//                notes.append(note)
+//                tableView.insertRows(at: [newIndexPath], with: .automatic)
+//            }
+//        }
+   }
     
     override func prepare(for segue: UIStoryboardSegue, sender:
         Any?) {
@@ -115,13 +117,13 @@ MFMailComposeViewControllerDelegate {
         tableView.reloadData()
     }
     
-    // MARK: SendEmailDelegate
-    
+    // MARK: SendEmailDelegate 
+
     func sendEmail(email: String) {
         
+        guard MFMailComposeViewController.canSendMail() else { return }
         let alert = UIAlertController.init(title: "Send E-mail", message: "Your registration was successfully done!", preferredStyle: .alert)
         let action = UIAlertAction.init(title: "OK", style: .default) { (UIAlertAction) in
-            guard MFMailComposeViewController.canSendMail() else { return }
             let mailComposer = MFMailComposeViewController()
             mailComposer.mailComposeDelegate = self
             mailComposer.setToRecipients([email])

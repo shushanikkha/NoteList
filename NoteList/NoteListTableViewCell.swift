@@ -35,6 +35,10 @@ class NoteListTableViewCell: UITableViewCell {
         descriptionLabel.text = note.description
         emailLabel.text = note.email
         phoneNumberLabel.text = note.phoneNumber
+        dateLabel.text = note.date.description
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateLabel.text = dateFormatter.string(from: note.date)
         if let noteImage = self.noteImage {
             noteImage.image = note.image
         }
